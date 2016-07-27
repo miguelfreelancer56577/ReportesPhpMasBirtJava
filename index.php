@@ -46,8 +46,27 @@ and open the template in the editor.
             PDFObject.embed("http://localhost:8080/birt/frameset?__report=test.rptdesign&sample=my+parameter&__format=pdf", "#showReport");
         </script>
         <h3>Como embeber Birt en un iframe</h3>
+        <h5>Escribe tu nombre para mostrarlo en el reporte</h5>
+        <form id="crearReporte" >
+            <div>
+                <label for="nombre">Nombre</label>
+            </div>
+            <div>
+                <input type="text" name="nombre" placeholder="Escribe tu nombre"/>
+            </div>
+            <div>
+                <button type="button" onclick="crearReporte()">Crear</button>
+                
+            </div>
+            <br />
+        </form>
         <FRAMESET rows="*">
             <iframe name="central" src="http://localhost:8080/birt/frameset?__report=test.rptdesign&sample=my+parameter" id="reporte">
         </FRAMESET>
+        <script type="text/javascript">
+            function crearReporte(){
+                console.log("gg");
+            }
+        </script>
     </body>
 </html>
